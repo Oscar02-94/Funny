@@ -29,6 +29,10 @@
     "publications": {
       "type": "hasMany",
       "model": "Publication"
+    },
+    "comments": {
+      "type": "hasMany",
+      "model": "Comment"
     }
   },
   "acls": [

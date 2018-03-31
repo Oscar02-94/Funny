@@ -1,40 +1,37 @@
 {
-  "name": "Publication",
-  "plural": "Publications",
+  "name": "comment",
+  "plural": "comments",
   "base": "PersistedModel",
   "idInjection": true,
   "options": {
     "validateUpsert": true
   },
   "properties": {
-    "name": {
+    "comment": {
       "type": "string",
       "required": true
     },
-    "information": {
-      "type": "string",
-      "required": true
-    },
-    "category": {
+    "publicationId": {
       "type": "string",
       "required": true
     },
     "date": {
       "type": "date",
-      "required": false,
+      "required": true,
       "defaultFn": "now"
     }
   },
   "validations": [],
   "relations": {
+    "publication": {
+      "type": "belongsTo",
+      "model": "Publication",
+      "foreignKey": "publicationId"
+    },
     "funny": {
       "type": "belongsTo",
       "model": "Funny",
       "foreignKey": "funnyId"
-    },
-    "comments": {
-      "type": "hasMany",
-      "model": "comment"
     }
   },
   "acls": [],
