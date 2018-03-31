@@ -1,0 +1,38 @@
+{
+  "name": "Publication",
+  "plural": "Publications",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "information": {
+      "type": "string",
+      "required": true
+    },
+    "category": {
+      "type": "string",
+      "required": true
+    },
+    "date": {
+      "type": "date",
+      "defaultFn": "now",
+      "required": false
+    }
+  },
+  "validations": [],
+  "relations": {
+    "funny": {
+      "type": "belongsTo",
+      "model": "Funny",
+      "foreignKey": "funnyId"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

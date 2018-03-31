@@ -5,19 +5,11 @@
   "idInjection": true,
   "options": {
     "validateUpsert": true,
-    "emailVerified": false
+    "emailVerificationRequired": false
   },
   "properties": {
     "email": {
       "type": "string",
-      "required": true
-    },
-    "name": {
-      "type": "string",
-      "required": true
-    },
-    "number": {
-      "type": "number",
       "required": true
     },
     "password": {
@@ -33,6 +25,10 @@
       "options": {
         "nestRemoting": true
       }
+    },
+    "publications": {
+      "type": "hasMany",
+      "model": "Publication"
     }
   },
   "acls": [
@@ -41,12 +37,6 @@
       "principalType": "ROLE",
       "principalId": "$everyone",
       "property": "*"
-    },
-    {
-      "accessType": "EXECUTE",
-      "principalType": "ROLE",
-      "principalId": "$everyone",
-      "property": "register"
     }
   ],
   "methods": {
