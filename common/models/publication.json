@@ -34,9 +34,72 @@
     },
     "comments": {
       "type": "hasMany",
-      "model": "comment"
+      "model": "Comment"
+    },
+    "likes": {
+      "type": "hasMany",
+      "model": "Like"
     }
   },
-  "acls": [],
-  "methods": {}
+  "acls": [
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW",
+      "property": "find"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "DENY"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$authenticated",
+      "permission": "ALLOW",
+      "property": "edit"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$authenticated",
+      "permission": "ALLOW"
+    }
+  ],
+  "methods": {
+    "edit": {
+      "accepts": [
+        {
+          "arg": "publicationId",
+          "type": "string",
+          "required": true,
+          "description": "Id de la publicacion"
+        },
+        {
+          "arg": "data",
+          "type": "object",
+          "required": true,
+          "description": "Datos que se desean cambiar de una publicacion"
+        }
+      ],
+      "returns": [
+        {
+          "arg": "data",
+          "type": "object",
+          "root": true,
+          "description": ""
+        }
+      ],
+      "description": "Editar una publicacion",
+      "http": [
+        {
+          "path": "/edit",
+          "verb": "put"
+        }
+      ]
+    }
+  }
 }

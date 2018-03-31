@@ -33,6 +33,10 @@
     "comments": {
       "type": "hasMany",
       "model": "Comment"
+    },
+    "likes": {
+      "type": "hasMany",
+      "model": "Like"
     }
   },
   "acls": [

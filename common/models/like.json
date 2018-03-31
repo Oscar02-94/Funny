@@ -1,23 +1,19 @@
 {
-  "name": "Comment",
-  "plural": "Comments",
+  "name": "Like",
+  "plural": "Likes",
   "base": "PersistedModel",
   "idInjection": true,
   "options": {
     "validateUpsert": true
   },
   "properties": {
-    "comment": {
-      "type": "string",
-      "required": true
-    },
     "publicationId": {
       "type": "string",
       "required": true
     },
     "date": {
       "type": "date",
-      "required": true,
+      "required": false,
       "defaultFn": "now"
     }
   },
