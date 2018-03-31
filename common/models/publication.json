@@ -39,6 +39,11 @@
     "likes": {
       "type": "hasMany",
       "model": "Like"
+    },
+    "images": {
+      "type": "hasMany",
+      "model": "Images",
+      "foreignKey": ""
     }
   },
   "acls": [

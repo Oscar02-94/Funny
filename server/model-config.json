@@ -51,5 +51,9 @@
   "Like": {
     "dataSource": "mongodb",
     "public": true
+  },
+  "Images": {
+    "dataSource": "mongodb",
+    "public": true
   }
 }
