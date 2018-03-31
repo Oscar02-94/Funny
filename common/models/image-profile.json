@@ -1,0 +1,32 @@
+{
+  "name": "ImageProfile",
+  "plural": "ImageProfiles",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "url": {
+      "type": "string",
+      "required": true
+    },
+    "date": {
+      "type": "date",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "funny": {
+      "type": "belongsTo",
+      "model": "Funny",
+      "foreignKey": "funnyId",
+      "options": {
+        "nestRemoting": true
+      }
+    }
+  },
+  "acls": [],
+  "methods": {}
+}
