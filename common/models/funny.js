@@ -3,6 +3,10 @@
 const app = require('../../server/server');
 
 module.exports = function(Funny) {
+  Funny.observe('find', (ctx, next) => {
+    console.log(app.dataSource)
+    return next();
+  })
   Funny.register = (email, password, password2, name, phone, next) => {
     const { ImageProfile } = app.models;
 

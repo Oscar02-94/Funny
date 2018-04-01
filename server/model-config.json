@@ -55,5 +55,9 @@
   "Images": {
     "dataSource": "mongodb",
     "public": true
+  },
+  "uploadImage": {
+    "dataSource": "cloudinary",
+    "public": true
   }
 }

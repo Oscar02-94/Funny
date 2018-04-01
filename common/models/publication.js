@@ -3,13 +3,31 @@
 const app = require('../../server/server');
 
 module.exports = function(Publication) {
-  Publication.observe('before save', (ctx, next) => {
-    if (ctx.isNewInstance !== undefined) {
-      ctx.instance.funnyId = ctx.options.accessToken.userId;
-    }
-
-    return next();
-  });
+  Publication.publish = (
+    name,
+    userId,
+    information,
+    category,
+    img,
+    next
+  ) => {
+    const {Images} = app.models;
+    console.log(img, '---')
+    Publication.create({
+      name,
+      funnyId: userId,
+      information,
+      category,
+    }).then(result => {
+      img.map(async i => {
+        await Images.updateAll({url: i.secure_url}, {publicationId: result.id});
+      });
+      return next(null, result);
+    })
+    .catch(err => {
+      return next(err);
+    });
+  };
 
   Publication.beforeRemote('edit', (ctx, instance, next) => {
     Publication.findById(ctx.args.publicationId)

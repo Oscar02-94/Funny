@@ -2,19 +2,17 @@
   "name": "Images",
   "plural": "Images",
   "base": "PersistedModel",
-  "idInjection": true,
+  "idInjection": false,
   "options": {
     "validateUpsert": true
   },
   "properties": {
-    "name": {
+    "userId": {
       "type": "string",
       "required": true
     },
     "url": {
-      "type": [
-        "string"
-      ],
+      "type": "string",
       "required": true
     },
     "date": {
@@ -23,7 +21,7 @@
     },
     "publicationId": {
       "type": "string",
-      "required": true
+      "required": false
     }
   },
   "validations": [],

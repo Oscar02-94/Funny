@@ -42,8 +42,7 @@
     },
     "images": {
       "type": "hasMany",
-      "model": "Images",
-      "foreignKey": ""
+      "model": "Images"
     }
   },
   "acls": [
@@ -71,10 +70,65 @@
       "accessType": "EXECUTE",
       "principalType": "ROLE",
       "principalId": "$authenticated",
+      "permission": "ALLOW",
+      "property": "publish"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$authenticated",
       "permission": "ALLOW"
     }
   ],
   "methods": {
+    "publish": {
+      "accepts": [
+        {
+          "arg": "name",
+          "type": "string",
+          "required": true,
+          "description": "Name of publication"
+        },
+        {
+          "arg": "userId",
+          "type": "string",
+          "required": true,
+          "description": "Id del usuario"  
+        },
+        {
+          "arg": "information",
+          "type": "string",
+          "required": true,
+          "description": "Information contain on publication"
+        },
+        {
+          "arg": "category",
+          "type": "string",
+          "required": true,
+          "description": "Caregoria donde se situa ela publicacion"
+        },
+        {
+          "arg": "img",
+          "type": ["object"],
+          "required": false,
+          "description": "Array de imagenes"
+        }
+      ],
+      "returns": [
+        {
+          "arg": "data",
+          "root": true,
+          "description": ""
+        }
+      ],
+      "description": "Hacer una nueva publicacion",
+      "http": [
+        {
+          "path": "/publish",
+          "verb": "post"
+        }
+      ]
+    },
     "edit": {
       "accepts": [
         {
