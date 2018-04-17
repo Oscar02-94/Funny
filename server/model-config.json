@@ -14,46 +14,46 @@
     ]
   },
   "AccessToken": {
-    "dataSource": "mongodb",
+    "dataSource": "mongo",
     "public": false
   },
   "ACL": {
-    "dataSource": "mongodb",
+    "dataSource": "mongo",
     "public": false
   },
   "RoleMapping": {
-    "dataSource": "mongodb",
+    "dataSource": "mongo",
     "public": false,
     "options": {
       "strictObjectIDCoercion": true
     }
   },
   "Role": {
-    "dataSource": "mongodb",
+    "dataSource": "mongo",
     "public": false
   },
   "Funny": {
-    "dataSource": "mongodb",
+    "dataSource": "mongo",
     "public": true
   },
   "ImageProfile": {
-    "dataSource": "mongodb",
+    "dataSource": "mongo",
     "public": true
   },
   "Publication": {
-    "dataSource": "mongodb",
+    "dataSource": "mongo",
     "public": true
   },
   "Comment": {
-    "dataSource": "mongodb",
+    "dataSource": "mongo",
     "public": true
   },
   "Like": {
-    "dataSource": "mongodb",
+    "dataSource": "mongo",
     "public": true
   },
   "Images": {
-    "dataSource": "mongodb",
+    "dataSource": "mongo",
     "public": true
   },
   "uploadImage": {

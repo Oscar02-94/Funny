@@ -11,4 +11,9 @@ module.exports = {
     },
     debug: true,
   },
+  mongo: {
+    name: 'mongo',
+    connector: 'mongodb',
+    url: `mongodb://${process.env.userDB}:${process.env.passwordDB}@funny-shard-00-00-4beoo.mongodb.net:27017,funny-shard-00-01-4beoo.mongodb.net:27017,funny-shard-00-02-4beoo.mongodb.net:27017/test?ssl=true&replicaSet=funny-shard-0&authSource=admin`,
+  },
 };

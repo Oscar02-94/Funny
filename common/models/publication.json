@@ -93,7 +93,7 @@
           "arg": "userId",
           "type": "string",
           "required": true,
-          "description": "Id del usuario"  
+          "description": "Id del usuario"
         },
         {
           "arg": "information",
@@ -109,7 +109,9 @@
         },
         {
           "arg": "img",
-          "type": ["object"],
+          "type": [
+            "object"
+          ],
           "required": false,
           "description": "Array de imagenes"
         }
