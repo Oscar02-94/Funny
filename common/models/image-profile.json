@@ -28,5 +28,37 @@
     }
   },
   "acls": [],
-  "methods": {}
+  "methods": {
+    "updateImage": {
+      "accepts": [
+        {
+          "arg": "imageId",
+          "type": "string",
+          "required": true,
+          "Description": "Id de la imagen a cambiar"
+        },
+        {
+          "arg": "url",
+          "type": "string",
+          "required": true,
+          "Description": "Nueva url"
+        }
+      ],
+      "returns": [
+        {
+          "arg": "data",
+          "type": "object",
+          "root": true,
+          "description": ""
+        }
+      ],
+      "description": "Actualiza la url de la imagen de perfil",
+      "http": [
+        {
+          "path": "/updateImage",
+          "verb": "put"
+        }
+      ]
+    }
+  }
 }
