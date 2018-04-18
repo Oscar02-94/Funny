@@ -7,7 +7,7 @@ module.exports = function(Uploadimage) {
     const {Images} = app.models;
 
     Images.create({
-      url: `${res.result.secure_url.split('/upload/')[0]}/upload/q_10/${res.result.secure_url.split('/upload/')[1]}`,
+      url: res.result.secure_url,
       userId: ctx.req.accessToken.userId,
     }, (err, r) => {
       return;
